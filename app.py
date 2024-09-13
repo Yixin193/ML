@@ -308,12 +308,7 @@ if model == 'Self-Organizing Maps':
     st.write(f"Mean Quantization Error: {mqe:.4f}")
 
 if model == 'Agglomerative Clustering' or model == 'BIRCH Clustering':
-    # PCA Components selection slider
-    n_pca_components = st.slider('Select number of PCA components:', min_value=2, max_value=10, value=5, key='pca_components_slider')
     
-    # Number of clusters selection slider
-    n_clusters = st.slider('Select number of clusters:', min_value=2, max_value=10, value=5, key='clusters_slider')
-
     # Step 1: Apply PCA for dimensionality reduction
     pca = PCA(n_components=n_pca_components)
     pca_transformed = pca.fit_transform(normalized_df)
